@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home</title>
+
+<!--bootstrap 5 css link-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<!--external css file-->
+<link href="/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!--Navbar start-->
+	<nav
+		class="navbar navbar-expand-lg navbar-dark bg-transparent shadow-lg">
+		<div class="container">
+			<a class="navbar-brand fw-bold" th:href="@{/home}"><h2>Job
+					Connect</h2></a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mt-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link me-4 text-white"
+						th:href="@{/home}"><h5>HOME</h5></a></li>
+					<li class="nav-item"><a class="nav-link text-white"
+						th:href="@{/about}"><h5>ABOUT US</h5></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Navbar end -->
+
+	<!-- Main start -->
+	<div class="main">
+		<div class="container h-100">
+			<div class="row h-100 align-items-center">
+				<div class="col-7">
+
+					<h3>Your Gateway to Exciting Career Opportunities!</h3>
+					<p class="my-4 lead">
+						<b> Welcome to our Job Connect, where your dream career
+							awaits! We understand that finding the right job can be a
+							challenging and time-consuming process. Our platform connects
+							talented professionals like yourself with a wide range of
+							exciting job opportunities from leading companies across various
+							industries. </b>
+					</p>
+						<div class="row">
+							<div class="col-auto">
+								<form th:action="@{/login}" th:method="get" id="form1">
+									<button type="submit" class="btn btn-success mb-3">FIND
+										A JOB</button>
+								</form>
+							</div>
+							<div class="col-auto">
+								<form th:action="@{/login}" th:method="get" id="form2">
+									<button type="submit" class="btn btn-primary mb-3">HIRE
+										A TALENT</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	<!-- Main end -->
+
+	<!--bootstrap 5 js link-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+	<!-- external js file -->
+	<script type="text/javascript" src="/js/actions.js"></script>
+</body>
+</html>

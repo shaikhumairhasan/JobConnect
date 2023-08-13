@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Login</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<!--Navbar start-->
+	<nav
+		class="navbar navbar-expand-lg navbar-dark bg-transparent shadow-lg">
+		<div class="container">
+			<a class="navbar-brand fw-bold" th:href="@{/home}">
+				<h2>Job Connect</h2>
+			</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mt-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link me-4 text-white"
+						th:href="@{/home}">
+							<h5>HOME</h5>
+					</a></li>
+					<li class="nav-item"><a class="nav-link text-white"
+						th:href="@{/about}">
+							<h5>ABOUT US</h5>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Navbar end -->
+
+
+	<!-- Login form start -->
+	<div class="container py-5 h-100">
+		<div
+			class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+				<div class="card" style="border-radius: 1rem;">
+					<div class="card-body p-5 text-center">
+					
+						<form th:action="@{/login}" th:method="post">
+
+							<div class="md-5 mt-md-4 pb-5">
+								<h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+								<p class=" mb-5">Please enter your login and password!</p>
+								<div class="form-outline mb-4">
+									<input type="email" id="typeEmailX"
+										class="form-control form-control-lg" placeholder="Email" name="username"/>
+								</div>
+								<div class="form-outline  mb-5">
+									<input type="password" id="typePasswordX"
+										class="form-control form-control-lg" placeholder="Password" name="password"/>
+								</div>
+								<button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
+							</div>
+							
+						</form>
+
+						<div>
+							<p class="mb-0">
+								Don't have an account? <a th:href="@{/userregistration}"
+									class=" fw-bold">Sign Up</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Logn form end -->
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

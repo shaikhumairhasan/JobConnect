@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Registration</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<!--Navbar start-->
+	<nav
+		class="navbar navbar-expand-lg navbar-dark bg-transparent shadow-lg">
+		<div class="container">
+			<a class="navbar-brand fw-bold" th:href="@{/home}">
+				<h2>Job Connect</h2>
+			</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mt-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link me-4 text-white"
+						th:href="@{/home}">
+							<h5>HOME</h5>
+					</a></li>
+					<li class="nav-item"><a class="nav-link text-white"
+						th:href="@{/about}">
+							<h5>ABOUT US</h5>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Navbar end -->
+
+
+	<!-- Registration form start -->
+	<div class="container h-100 my-5">
+		<div
+			class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-xl-8">
+
+				<div class="card" style="border-radius: 15px;">
+					<div class="card-body">
+
+						<form th:action="@{/userregister}" th:method="post" enctype="multipart/form-data">
+						
+							<div class="row align-items-center pt-2 pb-2">
+								<div class="col-md-3 ps-5">
+									<h6 class="mb-0">Full Name:</h6>
+								</div>
+								<div class="col-md-9 pe-5">
+									<input type="text" class="form-control form-control-lg" name="username"/>
+								</div>
+							</div>
+
+							<hr class="mx-n3">
+
+							<div class="row align-items-center pt-2 pb-2">
+								<div class="col-md-3 ps-5">
+									<h6 class="mb-0">Email:</h6>
+								</div>
+								<div class="col-md-9 pe-5">
+									<input type="email" class="form-control form-control-lg" name="email"/>
+								</div>
+							</div>
+
+							<hr class="mx-n3">
+
+							<div class="row align-items-center pt-2 pb-2">
+								<div class="col-md-3 ps-5">
+									<h6 class="mb-0">Password:</h6>
+								</div>
+								<div class="col-md-9 pe-5">
+									<input type="password" class="form-control form-control-lg" name="password"/>
+								</div>
+							</div>
+
+							<hr class="mx-n3">
+
+							<div class="row align-items-center py-1">
+								<div class="col-md-3 ps-5">
+
+									<h6 class="mb-0">Upload CV:</h6>
+
+								</div>
+								<div class="col-md-9 pe-5">
+
+									<input class="form-control form-control-lg" id="formFileLg"
+										type="file" name="resume"/>
+									<div class="small text-muted mt-2">Upload your CV/Resume.
+										Max file size 10 MB</div>
+
+								</div>
+							</div>
+							
+
+							<hr class="mx-n3">
+
+							<div class="px-5 py-4">
+								<button type="submit" class="btn btn-primary btn-lg">Send
+									application</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Registration form end -->
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

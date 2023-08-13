@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+}
+
+body{
+    height: 100%;
+    background-size: cover;
+    background-image: url("/images/image.jpg");
+    background-attachment: fixed;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+    font-size: 20px;
+}
+
+.navbar-light .navbar-brand{
+    color: white;
+    font-size: 30px;
+}
+
+.main {
+    height: 90vh;
+    width: 100%;
+    color: white;
+}
+
+.h-100 {
+    height: 100%;
+    width: 100%;
+}
+
+.user-input-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    padding-bottom: 15px;
+}

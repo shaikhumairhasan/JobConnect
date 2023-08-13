@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View all jobs</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!--Navbar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent shadow-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold" th:href="@{/home}">
+                <h2>Job Connect</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mt-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link me-4 text-danger" th:href="@{/logout}">
+                            <h5>LOGOUT</h5>
+                        </a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- View all job starts -->
+    <div class="container">
+        <hr>
+        <h3 class="mt-4 mb-4 text-center text-light bg-secondary p-3">ALL JOBS</h3><hr>
+        <div class="row" th:each="job : ${jobs}">
+            <div class="">
+                <div class="card mb-5">
+                    <div class="card-body rounded">
+                        
+                        <h4 class="card-subtitle mb-2"><b>JOB TITLE: <span class="text-success" th:text="${job.jobTitle}"/></b></h4>
+                        <p class="card-title"><b>JOB ID: </b> <span class="text-danger" th:text="${job.jobId}"/></p>
+                        <p class="card-text"><b>JOB DESCRIPTION:</b> <span class="text-danger" th:text="${job.jobDescription}"/></p>
+                        <p class="card-text"><b>COMPANY NAME:</b> <span class="text-danger" th:text="${job.companyName}"/></p>
+                        <p class="card-text"><b>LOCATION:</b> <span class="text-danger" th:text="${job.location}"/></p>
+                        <p class="card-text"><b>SALARY:</b> <span class="text-danger" th:text="${job.salary}"/></p>
+                        <p class="card-text"><b>CIN NUMBER:</b> <span class="text-danger" th:text="${job.CIN}"/></p><hr>
+                        
+                        <div class="text-center">
+    						<a th:if="${#strings.equals(job.jobId, param.jobIdParam)}" class="btn btn-secondary disabled me-4" disabled>Applied</a>
+   						    <a th:unless="${#strings.equals(job.jobId, param.jobIdParam)}" class="btn btn-success me-4" th:href="@{/apply/{jobId}(jobId=${job.jobId})}">Apply</a>
+						</div>
+
+
+                </div>
+            </div>
+          </div>
+    </div>
+    </div>
+    <!-- View all job ends -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

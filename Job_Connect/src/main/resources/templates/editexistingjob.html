@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit job details</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!--Navbar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent shadow-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold" th:href="@{/home}">
+                <h2>Job Connect</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mt-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link me-4 text-danger" th:href="@{/logout}">
+                            <h5>LOGOUT</h5>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Edit job details starts -->
+    <div class="container col-xl-4 col-md-6  bg-dark rounded">
+        <h3 class="mt-4 text-center text-light bg-dark p-3">Edit job details</h3>
+        <form th:action="@{/editjob}" th:method="post" th:object="${job}" class="mb-5 p-2">
+            <div class="form-group">
+                <label for="jobTitle" class="text-light">Edit Job Title:</label>
+                <input type="text"  th:value="${job.jobTitle}" name="jobTitle" class="form-control mb-3" id="jobTitle" placeholder="Enter job title">
+            </div>
+            <div class="form-group">
+                <label for="jobDescription" class="text-light">Edit Job Description:</label>
+                <textarea name="jobDescription" th:text="${job.jobDescription}" class="form-control mb-3" id="jobDescription" rows="4" placeholder="Enter job description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="companyName" class="text-light">Edit Company Name:</label>
+                <input type="text" name="companyName" th:value="${job.companyName}" class="form-control mb-3" id="companyName" placeholder="Enter company name">
+            </div>
+            <div class="form-group">
+                <label for="companyCIN" class="text-light">Edit Company CIN Number:</label>
+                <input type="text" name="CIN" th:value="${job.CIN}" class="form-control mb-3" id="companyCIN" placeholder="Enter company CIN number">
+            </div>
+            <div class="form-group">
+                <label for="salary" class="text-light">Edit Salary:</label>
+                <input type="number" name="salary" th:value="${job.salary}" class="form-control mb-3" id="salary" placeholder="Enter salary">
+            </div>
+            <div class="form-group">
+                <label for="jobLocation" class="text-light">Edit Job Location:</label>
+                <input type="text" name="location" th:value="${job.location}" class="form-control mb-3" id="jobLocation" placeholder="Enter job location">
+            </div>
+            <button type="submit" class="btn btn-primary my-4">Save Changes</button>
+            <input type="hidden" name="jobId" th:value="${job.jobId}">
+        </form>
+    </div>
+    <!-- Edit job details ends -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
